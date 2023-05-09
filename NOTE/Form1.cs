@@ -42,5 +42,42 @@ namespace NOTE
                 richTextBox1.Text= File.ReadAllText(sa.FileName);
             }
         }
+
+        private void but3_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(richTextBox1.Text);
+        }
+
+        private void but4_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text =richTextBox1.Text + Clipboard.GetText();
+        }
+
+        private void but5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clipboard.Clear();
+                Clipboard.SetText(richTextBox1.Text);
+                richTextBox1.Text = "";
+            }
+            catch
+            {
+
+            }
+          
+        }
+
+        private void but6_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.ShowDialog();
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(richTextBox1.Text,richTextBox1.Font,Brushes.Brown,new Point(100,100));
+        }
     }
 }

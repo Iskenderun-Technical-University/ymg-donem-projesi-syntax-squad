@@ -44,8 +44,10 @@ namespace NOTE
             this.but2 = new System.Windows.Forms.Button();
             this.but1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.bunifuSlider1 = new Bunifu.Framework.UI.BunifuSlider();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -154,6 +156,7 @@ namespace NOTE
             this.but6.Size = new System.Drawing.Size(91, 76);
             this.but6.TabIndex = 0;
             this.but6.UseVisualStyleBackColor = true;
+            this.but6.Click += new System.EventHandler(this.but6_Click);
             // 
             // but5
             // 
@@ -166,6 +169,7 @@ namespace NOTE
             this.but5.Size = new System.Drawing.Size(91, 76);
             this.but5.TabIndex = 0;
             this.but5.UseVisualStyleBackColor = true;
+            this.but5.Click += new System.EventHandler(this.but5_Click);
             // 
             // but4
             // 
@@ -178,6 +182,7 @@ namespace NOTE
             this.but4.Size = new System.Drawing.Size(91, 76);
             this.but4.TabIndex = 0;
             this.but4.UseVisualStyleBackColor = true;
+            this.but4.Click += new System.EventHandler(this.but4_Click);
             // 
             // but3
             // 
@@ -190,6 +195,7 @@ namespace NOTE
             this.but3.Size = new System.Drawing.Size(91, 76);
             this.but3.TabIndex = 0;
             this.but3.UseVisualStyleBackColor = true;
+            this.but3.Click += new System.EventHandler(this.but3_Click);
             // 
             // but2
             // 
@@ -227,15 +233,6 @@ namespace NOTE
             this.panel2.Size = new System.Drawing.Size(1354, 79);
             this.panel2.TabIndex = 2;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 82);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1354, 629);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            // 
             // bunifuSlider1
             // 
             this.bunifuSlider1.BackColor = System.Drawing.Color.Transparent;
@@ -248,6 +245,31 @@ namespace NOTE
             this.bunifuSlider1.Size = new System.Drawing.Size(1348, 30);
             this.bunifuSlider1.TabIndex = 0;
             this.bunifuSlider1.Value = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(0, 82);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1354, 629);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Form1
             // 
@@ -287,6 +309,8 @@ namespace NOTE
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private Bunifu.Framework.UI.BunifuSlider bunifuSlider1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
 
