@@ -31,6 +31,7 @@ namespace NOTE
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.but8888 = new System.Windows.Forms.Button();
             this.but13 = new System.Windows.Forms.Button();
             this.but12 = new System.Windows.Forms.Button();
             this.but11 = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@ namespace NOTE
             this.but2 = new System.Windows.Forms.Button();
             this.but1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuSlider1 = new Bunifu.Framework.UI.BunifuSlider();
+            this.Slider1 = new Bunifu.Framework.UI.BunifuSlider();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
@@ -55,6 +56,7 @@ namespace NOTE
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.but8888);
             this.panel1.Controls.Add(this.but13);
             this.panel1.Controls.Add(this.but12);
             this.panel1.Controls.Add(this.but11);
@@ -73,17 +75,30 @@ namespace NOTE
             this.panel1.Size = new System.Drawing.Size(1354, 82);
             this.panel1.TabIndex = 1;
             // 
+            // but8888
+            // 
+            this.but8888.BackColor = System.Drawing.Color.White;
+            this.but8888.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("but8888.BackgroundImage")));
+            this.but8888.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.but8888.Location = new System.Drawing.Point(758, 6);
+            this.but8888.Name = "but8888";
+            this.but8888.Size = new System.Drawing.Size(88, 73);
+            this.but8888.TabIndex = 1;
+            this.but8888.UseVisualStyleBackColor = false;
+            this.but8888.Click += new System.EventHandler(this.but8888_Click);
+            // 
             // but13
             // 
             this.but13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("but13.BackgroundImage")));
             this.but13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.but13.FlatAppearance.BorderSize = 0;
             this.but13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but13.Location = new System.Drawing.Point(1149, 3);
+            this.but13.Location = new System.Drawing.Point(1221, 6);
             this.but13.Name = "but13";
             this.but13.Size = new System.Drawing.Size(91, 76);
             this.but13.TabIndex = 0;
             this.but13.UseVisualStyleBackColor = true;
+            this.but13.Click += new System.EventHandler(this.but13_Click);
             // 
             // but12
             // 
@@ -91,11 +106,12 @@ namespace NOTE
             this.but12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.but12.FlatAppearance.BorderSize = 0;
             this.but12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but12.Location = new System.Drawing.Point(1058, 3);
+            this.but12.Location = new System.Drawing.Point(1103, 3);
             this.but12.Name = "but12";
-            this.but12.Size = new System.Drawing.Size(92, 76);
+            this.but12.Size = new System.Drawing.Size(95, 76);
             this.but12.TabIndex = 0;
             this.but12.UseVisualStyleBackColor = true;
+            this.but12.Click += new System.EventHandler(this.but12_Click);
             // 
             // but11
             // 
@@ -103,11 +119,12 @@ namespace NOTE
             this.but11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.but11.FlatAppearance.BorderSize = 0;
             this.but11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but11.Location = new System.Drawing.Point(967, 3);
+            this.but11.Location = new System.Drawing.Point(1004, 3);
             this.but11.Name = "but11";
             this.but11.Size = new System.Drawing.Size(91, 76);
             this.but11.TabIndex = 0;
             this.but11.UseVisualStyleBackColor = true;
+            this.but11.Click += new System.EventHandler(this.but11_Click);
             // 
             // but10
             // 
@@ -115,11 +132,12 @@ namespace NOTE
             this.but10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.but10.FlatAppearance.BorderSize = 0;
             this.but10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but10.Location = new System.Drawing.Point(876, 3);
+            this.but10.Location = new System.Drawing.Point(922, 3);
             this.but10.Name = "but10";
             this.but10.Size = new System.Drawing.Size(91, 76);
             this.but10.TabIndex = 0;
             this.but10.UseVisualStyleBackColor = true;
+            this.but10.Click += new System.EventHandler(this.but10_Click);
             // 
             // but9
             // 
@@ -127,11 +145,12 @@ namespace NOTE
             this.but9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.but9.FlatAppearance.BorderSize = 0;
             this.but9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but9.Location = new System.Drawing.Point(785, 3);
+            this.but9.Location = new System.Drawing.Point(836, 3);
             this.but9.Name = "but9";
             this.but9.Size = new System.Drawing.Size(91, 76);
             this.but9.TabIndex = 0;
             this.but9.UseVisualStyleBackColor = true;
+            this.but9.Click += new System.EventHandler(this.but9_Click);
             // 
             // but7
             // 
@@ -144,6 +163,7 @@ namespace NOTE
             this.but7.Size = new System.Drawing.Size(91, 76);
             this.but7.TabIndex = 0;
             this.but7.UseVisualStyleBackColor = true;
+            this.but7.Click += new System.EventHandler(this.but7_Click);
             // 
             // but6
             // 
@@ -226,25 +246,26 @@ namespace NOTE
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.bunifuSlider1);
+            this.panel2.Controls.Add(this.Slider1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 711);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1354, 79);
             this.panel2.TabIndex = 2;
             // 
-            // bunifuSlider1
+            // Slider1
             // 
-            this.bunifuSlider1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSlider1.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.bunifuSlider1.BorderRadius = 0;
-            this.bunifuSlider1.IndicatorColor = System.Drawing.Color.SeaGreen;
-            this.bunifuSlider1.Location = new System.Drawing.Point(3, 25);
-            this.bunifuSlider1.MaximumValue = 100;
-            this.bunifuSlider1.Name = "bunifuSlider1";
-            this.bunifuSlider1.Size = new System.Drawing.Size(1348, 30);
-            this.bunifuSlider1.TabIndex = 0;
-            this.bunifuSlider1.Value = 0;
+            this.Slider1.BackColor = System.Drawing.Color.Transparent;
+            this.Slider1.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.Slider1.BorderRadius = 0;
+            this.Slider1.IndicatorColor = System.Drawing.Color.Blue;
+            this.Slider1.Location = new System.Drawing.Point(3, 25);
+            this.Slider1.MaximumValue = 100;
+            this.Slider1.Name = "Slider1";
+            this.Slider1.Size = new System.Drawing.Size(1348, 30);
+            this.Slider1.TabIndex = 0;
+            this.Slider1.Value = 0;
+            this.Slider1.ValueChanged += new System.EventHandler(this.bunifuSlider1_ValueChanged);
             // 
             // richTextBox1
             // 
@@ -308,9 +329,10 @@ namespace NOTE
         private System.Windows.Forms.Button but1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private Bunifu.Framework.UI.BunifuSlider bunifuSlider1;
+        private Bunifu.Framework.UI.BunifuSlider Slider1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button but8888;
     }
 }
 

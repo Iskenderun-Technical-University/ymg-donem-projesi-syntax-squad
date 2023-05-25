@@ -79,5 +79,74 @@ namespace NOTE
         {
             e.Graphics.DrawString(richTextBox1.Text,richTextBox1.Font,Brushes.Brown,new Point(100,100));
         }
+
+        private void but7_Click(object sender, EventArgs e)
+        {
+            var yaz =new FontDialog();
+            var sol = yaz.ShowDialog();
+
+            if (sol == DialogResult.OK)
+            {
+                richTextBox1.Font = yaz.Font;
+            }
+        }
+
+        private void but9_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Underline);
+        }
+
+        private void but8888_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Bold);
+        }
+
+        private void but10_Click(object sender, EventArgs e)
+        {
+            richTextBox1.RightToLeft = RightToLeft.No;
+
+        }
+
+        private void but11_Click(object sender, EventArgs e)
+        {
+            richTextBox1.RightToLeft = RightToLeft.Yes;
+        }
+
+        private void but12_Click(object sender, EventArgs e)
+        {
+            var backrg = new ColorDialog();
+            var rol = backrg.ShowDialog();
+
+            if (rol == DialogResult.OK)
+            {
+                richTextBox1.BackColor = backrg.Color;
+
+            }
+        }
+
+        private void but13_Click(object sender, EventArgs e)
+        {
+            var backrg = new ColorDialog();
+            var rol = backrg.ShowDialog();
+
+            if (rol == DialogResult.OK)
+            {
+                richTextBox1.ForeColor = backrg.Color;
+
+            }
+        }
+
+        private void bunifuSlider1_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                richTextBox1.ZoomFactor = Slider1.Value;
+            }
+            catch
+            {
+
+            }
+           
+        }
     }
 }
